@@ -1,0 +1,26 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Rigo",
+    "home_page_url": "https://mydomain.org/",
+    "feed_url": "https://mydomain.org/feed_json_created.json",
+    "description": null,
+    "icon": "null",
+    "authors": [],
+    "language": "en",
+    "items": [
+        {
+            "id": "https://mydomain.org/blog/incontext-learning/",
+            "url": "https://mydomain.org/blog/incontext-learning/",
+            "title": "Incontext Learning",
+            "content_html": "<h1>Incontext Learning</h1>\n<p>In-depth tutorial on Incontext Learning (ICL).</p>\n<div style=\"text-align: center;\" markdown=\"1\">\n[Share on :simple-x:](https://x.com/inte...",
+            "image": null,
+            "date_published": "2024-12-31T00:00:00+00:00",
+            "authors": [
+                {
+                    "name": "Rigo"
+                }
+            ],
+            "tags": null
+        }
+    ]
+}
