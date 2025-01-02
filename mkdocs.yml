@@ -1,0 +1,122 @@
+site_name: Rigo
+site_url: https://mydomain.org/
+repo_url: https://github.com/rigo4tech/rigo
+repo_name: rigo4tech/rigo
+theme:
+  name: material
+  font:
+    text: Merriweather Sans
+    code: Red Hat Mono
+  custom_dir: overrides
+
+  logo: assets/rigo.png
+  favicon: assets/rigo.png
+  features:
+    - navigation.footer
+    - navigation.top
+    - navigation.tracking
+    - search.highlight
+    - search.share
+    - search.suggest
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.expand
+    - navigation.path
+    - toc.follow
+  palette:
+    - scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+      primary: teal
+
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+      primary: teal
+plugins:
+  - search:
+      separator: '[\s\-,:!=\[\]()"/]+|(?!\b)(?=[A-Z][a-z])|\.(?!\d)|&[lg]t;'
+  - blog:
+      enabled: true
+      blog_dir: blog
+      blog_toc: false
+      post_dir: "{blog}/posts"
+      post_url_max_categories: 1
+      post_slugify_separator: "-"
+      post_excerpt_max_authors: 1
+      post_excerpt_max_categories: 5
+      post_excerpt_separator: <!-- more -->
+      post_readtime: true
+      post_readtime_words_per_minute: 265
+      post_url_format: "{slug}"
+      archive: true
+      archive_name: Archive
+      archive_pagination: true
+      archive_pagination_per_page: 10
+      archive_toc: false
+      categories: true
+      categories_name: Categories
+      categories_allowed:
+        - LLMs
+      categories_slugify_separator: "-"
+      categories_pagination: true
+      categories_pagination_per_page: 10
+      categories_toc: false
+      authors: true
+      authors_file: "{blog}/.authors.yml"
+  - tags:
+      enabled: true
+      tags: true
+      tags_file: tags.md
+  - rss:
+      abstract_chars_count: 160
+      abstract_delimiter: <!-- more -->
+      comments_path: "null"
+      date_from_meta:
+        as_creation: date.created
+        as_update: date.updated
+      enabled: true
+      feed_ttl: 1440
+      image: "null"
+      json_feed_enabled: true
+      length: 20
+      match_path: blog/posts/*
+      pretty_print: true
+      rss_feed_enabled: true
+      use_git: true
+      use_material_social_cards: true
+  - git-committers:
+      enabled: true
+      repository: rigo4tech/blog
+      branch: main
+      token: !ENV GH_TOKEN
+  - git-revision-date-localized:
+      type: date
+      fallback_to_build_date: false
+      enable_creation_date: true
+      enabled: true
+
+hooks:
+  - hooks/socialmedia.py
+extra:
+  generator: true
+  social:
+    - icon: fontawesome/brands/x-twitter
+      link: https://x.com/RigoTech1
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.superfences
+copyright: Copyright &copy; 2024 Rigo
